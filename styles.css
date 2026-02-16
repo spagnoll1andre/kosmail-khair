@@ -485,11 +485,16 @@ ul {
   /* Taller hero */
   text-align: center;
   padding: var(--spacing-xl) 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero_bg.webp');
+  /* Updated to use 'background.png' and enforce light text colors */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  /* Local overrides to ensure text is visible on dark background regardless of theme */
+  --text: #DCD6C4;
+  --text-muted: #b0aa9a;
+  color: var(--text);
 }
 
 .hero__inner {
