@@ -476,15 +476,19 @@ ul {
 }
 
 /* ======================== HERO ======================== */
-.hero {
+#hero {
   position: relative;
-  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 80vh;
+  /* Taller hero */
   text-align: center;
-  padding: 6rem 1.5rem 4rem;
-  background: var(--bg-primary);
+  padding: var(--spacing-xl) 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero_bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
