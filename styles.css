@@ -700,14 +700,15 @@ ul {
 .service-item__image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  /* aspect-ratio removed to allow image to dictate height */
   overflow: hidden;
   background: var(--bg-primary);
 }
 
 .service-item__img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
