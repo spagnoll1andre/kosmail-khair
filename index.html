@@ -31,11 +31,10 @@
   <meta name="twitter:description" content="Prodotti professionali per capelli e formazione avanzata per saloni.">
   <meta name="twitter:image" content="https://www.khair.it/og-image.jpg">
 
-  <!-- Favicon / Manifest Placeholders -->
-  <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
-  <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
-  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
-  <!-- <link rel="manifest" href="/manifest.webmanifest"> -->
+  <!-- Favicon / Manifest -->
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="logo.svg">
+  <meta name="theme-color" content="#252122">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -90,9 +89,8 @@
   <div class="announcement-bar" role="banner">
     <div class="container announcement-bar__inner">
       <p>
-        Nuovo portale: <strong>Kosmail</strong> — gestisci i tuoi ordini online
-        <a href="https://www.kosmail.com/" target="_blank" rel="noopener noreferrer"
-          class="announcement-bar__link">Scopri di più &rarr;</a>
+        Nuovo portale: <a href="https://www.kosmail.com/" target="_blank" rel="noopener noreferrer"
+          class="announcement-bar__link">Kosmail.com</a> – Gestisci i tuoi ordini online
       </p>
     </div>
   </div>
@@ -103,11 +101,7 @@
 
       <!-- Logo -->
       <a href="#hero" class="site-header__logo" aria-label="KHair — Torna alla home">
-        <!-- Simplified SVG mark inspired by the K-in-circle logo -->
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-          <circle cx="50" cy="50" r="48" fill="#A39262" />
-          <polygon points="35,20 35,80 50,80 50,55 70,80 88,80 62,50 85,20 68,20 50,45 50,20" fill="#252122" />
-        </svg>
+        <img src="logo.svg" alt="KHair" width="48" height="48" class="logo-mark">
         <span class="logo-text">KHair</span>
       </a>
 
@@ -117,13 +111,9 @@
           <li><a href="#chi-siamo" class="site-nav__link">Chi siamo</a></li>
           <li><a href="#valori" class="site-nav__link">Valori</a></li>
           <li><a href="#servizi" class="site-nav__link">Servizi</a></li>
-          <li><a href="#portale-kosmail" class="site-nav__link">Portale Kosmail</a></li>
-          <li><a href="#contatti" class="site-nav__link">Contatti</a></li>
+          <li><a href="#portale-kosmail" class="site-nav__link nav-item--highlight">Portale Kosmail</a></li>
+          <li><a href="#contatti" class="site-nav__link">Contattaci</a></li>
         </ul>
-        <a href="https://www.kosmail.com/" class="btn btn--small btn--accent site-nav__cta" target="_blank"
-          rel="noopener noreferrer">
-          Accedi a Kosmail
-        </a>
       </nav>
 
       <!-- Mobile Menu Toggle -->
@@ -142,13 +132,9 @@
           <li><a href="#chi-siamo" class="mobile-menu__link">Chi siamo</a></li>
           <li><a href="#valori" class="mobile-menu__link">Valori</a></li>
           <li><a href="#servizi" class="mobile-menu__link">Servizi</a></li>
-          <li><a href="#portale-kosmail" class="mobile-menu__link">Portale Kosmail</a></li>
-          <li><a href="#contatti" class="mobile-menu__link">Contatti</a></li>
+          <li><a href="#portale-kosmail" class="mobile-menu__link nav-item--highlight">Portale Kosmail</a></li>
+          <li><a href="#contatti" class="mobile-menu__link">Contattaci</a></li>
         </ul>
-        <a href="https://www.kosmail.com/" class="btn btn--accent mobile-menu__cta" target="_blank"
-          rel="noopener noreferrer">
-          Accedi a Kosmail
-        </a>
       </nav>
     </div>
   </header>
@@ -315,44 +301,66 @@
 
           <!-- Service 1 -->
           <article class="service-item reveal">
-            <h3 class="service-item__title">Prodotti Professionali</h3>
-            <p class="service-item__desc">
-              Una selezione curata di linee per cura, colore e styling: ogni referenza è scelta per le sue performance
-              tecniche e la sua affidabilità in salone.
-            </p>
-            <ul class="service-item__list">
-              <li>Brand selezionati per qualità ed efficacia</li>
-              <li>Linee complete: cura, colore e styling</li>
-              <li>Performance tecniche certificate</li>
-            </ul>
+            <div class="service-item__image-wrapper">
+              <!-- TODO: Replace with real service image -->
+              <img src="https://placehold.co/600x400/2C2829/A39262?text=Prodotti" alt="Prodotti Professionali"
+                loading="lazy" width="600" height="400" class="service-item__img">
+            </div>
+            <div class="service-item__content">
+              <h3 class="service-item__title">Prodotti Professionali</h3>
+              <p class="service-item__desc">
+                Una selezione curata di linee per cura, colore e styling: ogni referenza è scelta per le sue performance
+                tecniche e la sua affidabilità in salone.
+              </p>
+              <ul class="service-item__list">
+                <li>Brand selezionati per qualità ed efficacia</li>
+                <li>Linee complete: cura, colore e styling</li>
+                <li>Performance tecniche certificate</li>
+              </ul>
+            </div>
           </article>
 
           <!-- Service 2 -->
           <article class="service-item reveal">
-            <h3 class="service-item__title">Supporto e Consulenza</h3>
-            <p class="service-item__desc">
-              Affianchiamo ogni salone con consulenza tecnica e commerciale mirata, condividendo strategie concrete per
-              la crescita del business.
-            </p>
-            <ul class="service-item__list">
-              <li>Consulenza tecnica personalizzata</li>
-              <li>Supporto commerciale continuo</li>
-              <li>Strategie per la crescita del salone</li>
-            </ul>
+            <div class="service-item__image-wrapper">
+              <!-- TODO: Replace with real service image -->
+              <img src="https://placehold.co/600x400/2C2829/A39262?text=Supporto" alt="Supporto e Consulenza"
+                loading="lazy" width="600" height="400" class="service-item__img">
+            </div>
+            <div class="service-item__content">
+              <h3 class="service-item__title">Supporto e Consulenza</h3>
+              <p class="service-item__desc">
+                Affianchiamo ogni salone con consulenza tecnica e commerciale mirata, condividendo strategie concrete
+                per
+                la crescita del business.
+              </p>
+              <ul class="service-item__list">
+                <li>Consulenza tecnica personalizzata</li>
+                <li>Supporto commerciale continuo</li>
+                <li>Strategie per la crescita del salone</li>
+              </ul>
+            </div>
           </article>
 
           <!-- Service 3 -->
           <article class="service-item reveal">
-            <h3 class="service-item__title">Assistenza Saloni</h3>
-            <p class="service-item__desc">
-              Relazione diretta e reattiva: gestiamo ordini e richieste con rapidità, per garantirti la massima
-              efficienza operativa.
-            </p>
-            <ul class="service-item__list">
-              <li>Relazione diretta e personale</li>
-              <li>Gestione rapida di ordini e richieste</li>
-              <li>Efficienza operativa garantita</li>
-            </ul>
+            <div class="service-item__image-wrapper">
+              <!-- TODO: Replace with real service image -->
+              <img src="https://placehold.co/600x400/2C2829/A39262?text=Assistenza" alt="Assistenza Saloni"
+                loading="lazy" width="600" height="400" class="service-item__img">
+            </div>
+            <div class="service-item__content">
+              <h3 class="service-item__title">Assistenza Saloni</h3>
+              <p class="service-item__desc">
+                Relazione diretta e reattiva: gestiamo ordini e richieste con rapidità, per garantirti la massima
+                efficienza operativa.
+              </p>
+              <ul class="service-item__list">
+                <li>Relazione diretta e personale</li>
+                <li>Gestione rapida di ordini e richieste</li>
+                <li>Efficienza operativa garantita</li>
+              </ul>
+            </div>
           </article>
 
         </div>
@@ -519,19 +527,7 @@
               </svg>
               <div>
                 <strong>Telefono</strong><br>
-                <a href="tel:+39 3667379670">+39 3667379670</a>
-              </div>
-            </div>
-            <div class="contact-info__item">
-              <svg class="contact-info__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A39262"
-                stroke-width="2" aria-hidden="true">
-                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.03 7.03 1 12 1C16.97 1 21 5.03 21 10Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <strong>Sede</strong><br>
-                Via delle Gerbere, 5<br>
-                00134 Roma (RM)
+                <a href="tel:+393667379670">+39 366 737 9670</a>
               </div>
             </div>
 
@@ -594,10 +590,17 @@
       <div class="site-footer__bottom">
         <p>&copy; 2026 KHair. Tutti i diritti riservati.</p>
         <div class="site-footer__legal">
-          <!-- Privacy / Cookie placeholders -->
           <a href="#privacy">Privacy Policy</a>
           <a href="#cookie">Cookie Policy</a>
         </div>
+      </div>
+
+      <!-- New Legal Data Row -->
+      <div class="site-footer__legal-row">
+        <p>
+          KHair S.r.l. &middot; P.IVA/C.F. 00000000000 &middot;
+          Iscr. Reg. Imprese Roma n. 00000 &middot; REA RM-000000 &middot; Cap. Soc. € 10.000,00 i.v.
+        </p>
       </div>
     </div>
   </footer>

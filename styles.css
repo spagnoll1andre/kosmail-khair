@@ -64,6 +64,7 @@ html {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -230,7 +231,7 @@ ul {
 
 .announcement-bar__link:hover,
 .announcement-bar__link:focus-visible {
-  color: var(--bg-alt);
+  color: var(--white);
 }
 
 /* ======================== HEADER / NAVBAR ======================== */
@@ -238,7 +239,7 @@ ul {
   position: sticky;
   top: var(--announce-h);
   z-index: 1000;
-  background: rgba(37, 33, 34, 0.92);
+  background: rgba(37, 33, 34, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(163, 146, 98, 0.12);
@@ -247,7 +248,7 @@ ul {
 
 @media (prefers-color-scheme: light) {
   .site-header {
-    background: rgba(220, 214, 196, 0.92);
+    background: rgba(220, 214, 196, 0.95);
   }
 }
 
@@ -258,6 +259,7 @@ ul {
 .site-header__inner {
   display: flex;
   align-items: center;
+  /* Keep space-between for basic layout, but we will center the nav via auto margins if needed or just use flex logic */
   justify-content: space-between;
   height: var(--header-h);
 }
@@ -269,10 +271,14 @@ ul {
   gap: 0.6rem;
   text-decoration: none;
   color: var(--text);
+  flex-shrink: 0;
 }
 
 .logo-mark {
-  flex-shrink: 0;
+  /* Dimensions controlled by img attributes but safe fallback here */
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -287,6 +293,21 @@ ul {
   display: flex;
   align-items: center;
   gap: 2rem;
+  /* Centering logic: In a flex container with "Logo - Nav - (Empty Right side logic? or just Nav)" */
+  /* If we want strict centering relative to viewport, we need absolute positioning or grid. 
+     For now, we will push it to the right or center. Space-between with only 2 items pushes Nav to right. 
+     To center it, we can use margin-left: auto; margin-right: auto; but Logo is on left. 
+     Reference structure usually has nav in middle. 
+     Let's try flex-grow on nav or margin adjustments.
+  */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    display: none;
+  }
 }
 
 .site-nav__list {
@@ -296,7 +317,7 @@ ul {
 }
 
 .site-nav__link {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
@@ -327,9 +348,27 @@ ul {
   width: 100%;
 }
 
-.site-nav__cta {
-  white-space: nowrap;
+/* Highlighted Nav Item (Portale Kosmail) */
+.nav-item--highlight {
+  border: 1px solid var(--accent);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-weight: 600;
+  transition: all var(--transition);
 }
+
+.nav-item--highlight::after {
+  display: none;
+  /* No underline for button-like item */
+}
+
+.nav-item--highlight:hover,
+.nav-item--highlight:focus-visible {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
 
 /* Hamburger */
 .hamburger {
@@ -344,6 +383,12 @@ ul {
   cursor: pointer;
   padding: 8px;
   z-index: 1010;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
 }
 
 .hamburger__line {
@@ -385,7 +430,8 @@ ul {
 }
 
 .mobile-menu[hidden] {
-  display: flex; /* override hidden so transitions work */
+  display: flex;
+  /* override hidden so transitions work */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -417,8 +463,16 @@ ul {
   color: var(--accent);
 }
 
+/* Make highlighted item prominent in mobile too */
+.mobile-menu__link.nav-item--highlight {
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius);
+}
+
 .mobile-menu__cta {
-  margin-top: 0.5rem;
+  /* Removed dedicated CTA button from JS/HTML to deduplicate */
+  display: none;
 }
 
 /* ======================== HERO ======================== */
@@ -627,12 +681,43 @@ ul {
   background: rgba(75, 71, 72, 0.2);
   border: 1px solid rgba(163, 146, 98, 0.1);
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  transition: border-color var(--transition);
+  overflow: hidden;
+  /* Ensure image stays within border radius */
+  transition: border-color var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-item:hover {
   border-color: rgba(163, 146, 98, 0.3);
+  transform: translateY(-4px);
+}
+
+.service-item__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.service-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-item:hover .service-item__img {
+  transform: scale(1.05);
+  /* Subtle zoom on hover */
+}
+
+.service-item__content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-item__title {
@@ -651,6 +736,8 @@ ul {
 .service-item__list {
   padding-left: 1.25rem;
   list-style: disc;
+  margin-top: auto;
+  /* Push list to bottom if needed, or just keep flow */
 }
 
 .service-item__list li {
@@ -1003,6 +1090,7 @@ ul {
 
 /* Tablet & below */
 @media (max-width: 992px) {
+
   .cards-grid,
   .services-grid {
     grid-template-columns: 1fr 1fr;
@@ -1084,6 +1172,20 @@ ul {
 
   .btn--large {
     width: 100%;
-    justify-content: center;
   }
+}
+
+/* Legal Row */
+.site-footer__legal-row {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.site-footer__legal-row p {
+  line-height: 1.6;
 }
