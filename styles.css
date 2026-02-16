@@ -486,15 +486,15 @@ ul {
   text-align: center;
   padding: var(--spacing-xl) 0;
   /* Updated to use 'background.png' and enforce light text colors */
+  background-color: #252122;
+  /* Fallback for dark theme or if image fails */
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  /* Local overrides to ensure text is visible on dark background regardless of theme */
-  --text: #DCD6C4;
-  --text-muted: #b0aa9a;
-  color: var(--text);
+  /* Enforce light text explicitly to avoid variable inheritance issues in light mode */
+  color: #f5f2ec;
 }
 
 .hero__inner {
@@ -508,13 +508,15 @@ ul {
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  color: var(--text);
+  color: #f5f2ec;
+  /* Force light color */
   margin-bottom: 1rem;
 }
 
 .hero__tagline {
   font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-  color: var(--text-muted);
+  color: rgba(245, 242, 236, 0.9);
+  /* Force light color */
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.6;
@@ -524,6 +526,7 @@ ul {
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
   font-weight: 600;
   color: var(--accent);
+  /* Keep accent color */
   margin-bottom: 2rem;
   line-height: 1.5;
 }
@@ -534,7 +537,8 @@ ul {
 
 .hero__trust-line {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: rgba(245, 242, 236, 0.7);
+  /* Force light color */
   margin-bottom: 2.5rem;
 }
 
