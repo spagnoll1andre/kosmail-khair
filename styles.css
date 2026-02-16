@@ -863,10 +863,9 @@ ul {
 
 /* ======================== CONTATTI ======================== */
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .contact-info {
@@ -910,89 +909,7 @@ ul {
   border-top: 1px solid rgba(163, 146, 98, 0.15);
 }
 
-/* Contact Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.form-group label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 0.75rem 1rem;
-  background: rgba(75, 71, 72, 0.3);
-  border: 1.5px solid rgba(163, 146, 98, 0.2);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 0.95rem;
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--text-muted);
-  opacity: 0.6;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(163, 146, 98, 0.15);
-}
-
-.form-group input.invalid,
-.form-group textarea.invalid {
-  border-color: #d9534f;
-}
-
-.form-error {
-  font-size: 0.8rem;
-  color: #d9534f;
-  min-height: 1.1em;
-}
-
-/* Toast */
-.toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: var(--accent);
-  color: var(--bg-primary);
-  padding: 1rem 2rem;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.95rem;
-  z-index: 9999;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  max-width: 90vw;
-  text-align: center;
-}
-
-.toast[hidden] {
-  display: block;
-}
-
-.toast.is-visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
 
 /* ======================== FOOTER ======================== */
 .site-footer {
